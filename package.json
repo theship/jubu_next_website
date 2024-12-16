@@ -1,6 +1,6 @@
 {
-  "name": "opensats",
-  "version": "0.2.0",
+  "name": "juleeburdekin",
+  "version": "0.2.1",
   "private": true,
   "scripts": {
     "start": "next dev",
