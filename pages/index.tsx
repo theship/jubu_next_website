@@ -78,21 +78,22 @@ export default function Home({
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="pt-4 md:pb-8">
           <h1 className="py-2 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 max-[375px]:text-2xl sm:text-3xl sm:leading-10 md:py-4 md:text-5xl md:leading-14 lg:text-6xl">
-            Support&nbsp;
+            Content&nbsp;
             <span className="block lg:inline">
               <Typing />
             </span>
           </h1>
           <p className="text-xl leading-7 text-gray-500 dark:text-gray-400">
-            Help us to provide sustainable funding for free and open-source
-            contributors working on freedom tech and projects that help bitcoin
-            flourish.
+            Reimagining content creation for the AI age, I combine technical
+            expertise with a deep understanding of language to build better
+            tools for creators and developers. I craft the infrastructure that
+            makes content more impactful and AI more human-friendly.
           </p>
           <div className="flex flex-wrap py-4">
             <div className="w-full md:w-1/2">
               <button
                 onClick={openGeneralFundModal}
-                className="mb-2 mr-2 w-full rounded bg-orange-500 px-4 text-xl font-semibold text-white hover:border-transparent hover:bg-orange-500 hover:text-black dark:text-black dark:hover:text-white md:max-w-[98%]"
+                className="mb-2 mr-2 w-full rounded bg-indigo-900 px-4 text-xl font-semibold text-white hover:border-transparent hover:bg-indigo-900 hover:text-black dark:text-black dark:hover:text-white md:max-w-[98%]"
               >
                 Donate to General Fund
               </button>
@@ -100,19 +101,19 @@ export default function Home({
             <div className="hidden w-full md:block md:w-1/2">
               <button
                 onClick={openopsFundModal}
-                className="block w-full rounded border border-orange-500 bg-transparent px-4 text-xl font-semibold text-orange-500 hover:border-transparent hover:bg-orange-500 hover:text-black dark:hover:text-white"
+                className="block w-full rounded border border-indigo-900 bg-transparent px-4 text-xl font-semibold text-indigo-900 hover:border-transparent hover:bg-indigo-900 hover:text-black dark:hover:text-white"
               >
                 Donate to Operations Budget
               </button>
             </div>
           </div>
           <p className="text-md leading-7 text-gray-500 dark:text-gray-400">
-            We are a 501(c)(3) public charity. All donations are tax deductible.
+            <em>All content on this site crafted with love—AND AI—by <CustomLink href="/about">me</CustomLink>.</em>
           </p>
           <div className="flex justify-end text-base font-medium leading-6">
             <Link
-              href="/donate"
-              className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+              href="/about"
+              className="text-primary-800 hover:text-primary-600 dark:hover:text-primary-400"
               aria-label="Learn More"
             >
               Learn More &rarr;
@@ -155,7 +156,7 @@ export default function Home({
           <div className="flex justify-end text-base font-medium leading-6">
             <Link
               href="/mission"
-              className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+              className="text-primary-800 hover:text-primary-600 dark:hover:text-primary-400"
               aria-label="Our Mission"
             >
               Our Mission &rarr;
@@ -212,7 +213,7 @@ export default function Home({
                       <div className="hidden text-base font-medium leading-6 md:block">
                         <Link
                           href={`/blog/${slug}`}
-                          className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                          className="text-primary-800 hover:text-primary-600 dark:hover:text-primary-400"
                           aria-label={`Read "${title}"`}
                         >
                           Read more &rarr;
@@ -240,7 +241,7 @@ export default function Home({
         <div className="flex justify-end pb-8 text-base font-medium leading-6">
           <Link
             href="/blog"
-            className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+            className="text-primary-800 hover:text-primary-600 dark:hover:text-primary-400"
             aria-label="All posts"
           >
             All Posts &rarr;
@@ -265,7 +266,7 @@ export default function Home({
           <div className="flex justify-end text-base font-medium leading-6">
             <Link
               href="/apply#criteria"
-              className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+              className="text-primary-800 hover:text-primary-600 dark:hover:text-primary-400"
               aria-label="Learn More"
             >
               Learn More &rarr;
@@ -285,7 +286,7 @@ export default function Home({
           <div className="flex justify-end pt-4 text-base font-medium leading-6">
             <Link
               href="/projects"
-              className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+              className="text-primary-800 hover:text-primary-600 dark:hover:text-primary-400"
               aria-label="View All Projects"
             >
               View Projects &rarr;

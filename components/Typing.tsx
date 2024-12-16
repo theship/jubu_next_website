@@ -7,18 +7,15 @@ export default function Typing() {
   React.useEffect(() => {
     const typed = new Typed(el.current, {
       strings: [
-        'Bitcoin',
-        'Contributors',
-        'FOSS',
-        'Freedom Tools',
-        'Freedom',
-        'Developers',
-        'Decentralization',
-        'nostr',
-        'Open-Source Projects',
-        'OpenSats',
+        'design and engineering',
+        'in the age of AI',
+        'for data pipelines',
+        'for developers',
+        'for civic engagement',
+        'for human potential',
+        'that matters',
       ],
-      typeSpeed: 50,
+      typeSpeed: 75,
       loop: true,
       cursorChar: '_',
     })

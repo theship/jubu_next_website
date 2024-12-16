@@ -3,13 +3,13 @@ import Link from './Link'
 const ClosedNotice = () => {
   return (
     <div
-      className="rounded-b border-t-4 border-orange-500 bg-yellow-100 px-4 py-3 text-yellow-900 shadow-md"
+      className="rounded-b border-t-4 border-indigo-900 bg-yellow-100 px-4 py-3 text-yellow-900 shadow-md"
       role="alert"
     >
       <div className="flex">
         <div className="py-1">
           <svg
-            className="mr-4 h-6 w-6 fill-current text-orange-500"
+            className="mr-4 h-6 w-6 fill-current text-indigo-900"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
           >

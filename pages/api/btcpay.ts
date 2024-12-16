@@ -14,7 +14,7 @@ export default async function handler(
 ) {
   if (req.method === 'POST') {
     const { amount, btcpay, email, name }: PayReq = req.body
-    const REDIRECT = 'http://opensats.org/thankyou'
+    const REDIRECT = 'http://juleeburdekin.com/thankyou'
 
     try {
       // Validate the amount that was passed from the client.

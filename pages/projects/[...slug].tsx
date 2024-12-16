@@ -38,7 +38,7 @@ export default function ProjectPage({
         {project.donationLink && (
           <CustomLink
             href={project.donationLink}
-            className="block rounded border border-stone-800 bg-stone-800 px-4 py-2 font-semibold text-white hover:border-transparent hover:bg-orange-500 hover:text-stone-800 dark:bg-white dark:text-black dark:hover:bg-orange-500"
+            className="block rounded border border-stone-800 bg-stone-800 px-4 py-2 font-semibold text-white hover:border-transparent hover:bg-indigo-900 hover:text-stone-800 dark:bg-white dark:text-black dark:hover:bg-indigo-900"
           >
             {project.donationLink.includes('geyser')
               ? 'Donate via Geyser'

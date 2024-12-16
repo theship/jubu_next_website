@@ -2,7 +2,7 @@ import ReactModal from 'react-modal'
 import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClose } from '@fortawesome/free-solid-svg-icons'
-import DonationForm from './DonationForm'
+import DonationForm from './OLD_DonationForm'
 import { Fund } from 'contentlayer/generated'
 
 type ModalProps = {

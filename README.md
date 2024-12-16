@@ -1,10 +1,10 @@
-# OpenSats.org
+# juleeburdekin.com
 
 This is the codebase behind [juleeburdekin.com](https://juleeburdekin.com).
 
 ## Getting started
 
-This website was bootstrapped using the [https://opensats.org source](https://github.com/OpenSats/website) implementation of the [`tailwind-nextjs-starter-blog`](https://github.com/timlrx/tailwind-nextjs-starter-blog). 
+This website was bootstrapped using the [https://openstats.org source](https://github.com/OpenSats/website) implementation of the [`tailwind-nextjs-starter-blog`](https://github.com/timlrx/tailwind-nextjs-starter-blog). 
 
 To run a development environment locally, run:
 

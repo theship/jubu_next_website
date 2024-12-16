@@ -2,22 +2,21 @@
 
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'OpenSats',
-  author: 'OpenSats',
-  headerTitle: 'OpenSats',
+  title: 'Julee Burdekin',
+  author: 'Julee Burdekin',
+  headerTitle: 'Julee Burdekin',
   description:
-    'OpenSats is a 501(c)(3) public charity that aims to support and maintain a sustainable ecosystem of funding for free and open-source projects and contributors, especially bitcoin-related projects and projects that help bitcoin flourish.',
+    'Julee Burdekin is reimagining content creation for the AI age. Julee combines technical expertise with a deep understanding of language to build better tools for creators and developers. Julee crafts the infrastructure that makes content more impactful and AI more human-friendly.',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://opensats.org',
-  siteRepo: 'https://github.com/OpenSats/website/',
+  siteUrl: 'https://juleeburdekin.com',
+  siteRepo: 'https://github.com/theship/website/',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
   socialBanner: '/static/images/twitter.png',
-  email: 'support@opensats.org',
-  github: 'https://github.com/OpenSats',
-  twitter: 'https://twitter.com/OpenSats',
-  nostr: 'npub10pensatlcfwktnvjjw2dtem38n6rvw8g6fv73h84cuacxn4c28eqyfn34f',
+  email: 'support@juleeburdekin.com',
+  github: 'https://github.com/theship',
+  bluesky: 'https://bluesky.com/pequodcapt',
   locale: 'en-US',
   analytics: {
     // If you want to use an analytics provider you have to add it to the

@@ -1,1 +1,1 @@
-Moved to https://opensats.org/selection
+Moved to https://juleeburdekin.com/selection
