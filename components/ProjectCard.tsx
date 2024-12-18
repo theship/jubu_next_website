@@ -37,14 +37,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     }
   }, [coverImage])
 
-  let cardStyle
-  if (tags.includes('Nostr')) {
+  let cardStyle 
+  if (Array.isArray(tags) && tags.includes('')) {
     cardStyle =
-      'h-full space-y-4 rounded-xl border-b-4 border-purple-600 bg-stone-100 dark:border-purple-600 dark:bg-stone-900'
-  } else if (tags.includes('Lightning')) {
+      'h-full space-y-4 rounded-xl border-b-4 border-stone-100 bg-stone-100 dark:border-stone-800 dark:bg-stone-900'
+  } else if (tags.includes('content')) {
     cardStyle =
       'h-full space-y-4 rounded-xl border-b-4 border-yellow-300 bg-stone-100 dark:border-yellow-300 dark:bg-stone-900'
-  } else if (tags.includes('Bitcoin')) {
+  } else if (tags.includes('AI')) {
     cardStyle =
       'h-full space-y-4 rounded-xl border-b-4 border-orange-400 bg-stone-100 dark:border-orange-400 dark:bg-stone-900'
   } else {

@@ -8,8 +8,6 @@ import { BlogNewsletterForm } from 'pliny/ui/NewsletterForm'
 import Image from './Image'
 import VideoPlayer from './VideoPlayer'
 import CustomLink from './Link'
-import AskMeAnythingForm from './AskMeAnythingForm'
-import AskMeAnythingFormButton from './AskMeAnythingFormButton'
 import DesignTeam from './DesignTeam'
 import Credits from './Supporters'
 import YouTubeEmbed from './YouTubeEmbed'
@@ -28,8 +26,6 @@ export const MDXComponents: ComponentMap = {
   pre: Pre,
   wrapper: Wrapper,
   BlogNewsletterForm,
-  AskMeAnythingForm,
-  AskMeAnythingFormButton,
   DesignTeam,
   YouTubeEmbed,
   Credits,

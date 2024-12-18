@@ -2,34 +2,34 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import ProjectCard from '../../components/ProjectCard'
-import { allProjects } from 'contentlayer/generated'
-import { Project } from 'contentlayer/generated'
-import { isNotOpenSatsProject } from '../funds'
+import { allLabs } from 'contentlayer/generated'
+import { Labs } from 'contentlayer/generated'
+import { isNotLabProject } from '../labs/index'
 
-const ProjectShowcase: NextPage<{ projects: Project[] }> = ({ projects }) => {
-  const [sortedProjects, setSortedProjects] = useState<Project[]>()
+const Labs: NextPage<{ labs: Lab[] }> = ({ labs }) => {
+  const [sortedLabs, setSortedLabs] = useState<Lab[]>()
 
   useEffect(() => {
-    setSortedProjects(
-      projects.filter(isNotOpenSatsProject).sort(() => 0.5 - Math.random())
+    setSortedLabs(
+      labs.filter((p) => !isNotLabProject(p)).sort(() => 0.5 - Math.random())
     )
-  }, [projects])
+  }, [labs])
 
   return (
     <>
       <Head>
-        <title>OpenSats | Project Showcase</title>
+        <title>Julee Burdekin | Labs</title>
       </Head>
       <section className="flex flex-col p-4 md:p-8">
         <div className="flex w-full items-center justify-between pb-8">
-          <h1 id="funds">Project Showcase</h1>
+          <h1 id="labs">Labs</h1>
         </div>
         <ul className="grid max-w-5xl grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-4">
-          {sortedProjects &&
-            sortedProjects.map((p, i) => (
+          {sortedLabs &&
+            sortedLabs.map((p, i) => (
               <li key={i} className="">
                 <ProjectCard
-                  slug={`/projects/${p.slug}`}
+                  slug={`/labs/${p.slug}`}
                   title={p.title}
                   summary={p.summary}
                   coverImage={p.coverImage}
@@ -44,14 +44,14 @@ const ProjectShowcase: NextPage<{ projects: Project[] }> = ({ projects }) => {
   )
 }
 
-export default ProjectShowcase
+export default Labs
 
 export async function getStaticProps({ params }: { params: any }) {
-  const projects = allProjects
+  const labs = allLabs
 
   return {
     props: {
-      projects,
+      labs,
     },
   }
 }

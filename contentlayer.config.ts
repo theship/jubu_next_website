@@ -48,12 +48,24 @@ export const Blog = defineDocumentType(() => ({
   fields: {
     title: { type: 'string', required: true },
     date: { type: 'date', required: true },
-    tags: { type: 'list', of: { type: 'string' } },
+    tags: {
+      type: 'list',
+      of: { type: 'string' },
+      resolve: (tags) => (typeof tags === 'string' ? [tags] : tags),
+    },
     lastmod: { type: 'date' },
     draft: { type: 'boolean' },
     summary: { type: 'string' },
-    images: { type: 'list', of: { type: 'string' } },
-    authors: { type: 'list', of: { type: 'string' } },
+    images: {
+      type: 'list',
+      of: { type: 'string' },
+      resolve: (images) => (typeof images === 'string' ? [images] : images),
+    },
+    authors: {
+      type: 'list',
+      of: { type: 'string' },
+      resolve: (authors) => (typeof authors === 'string' ? [authors] : authors),
+    },
     layout: { type: 'string' },
     bibliography: { type: 'string' },
     canonicalUrl: { type: 'string' },
@@ -106,7 +118,7 @@ export const Projects = defineDocumentType(() => ({
     title: { type: 'string', required: true },
     dateAdded: { type: 'date', required: true },
     summary: { type: 'string', required: true },
-    nym: { type: 'string', required: true },
+    nym: { type: 'string' },
     website: { type: 'string' },
     donationLink: { type: 'string' },
     coverImage: { type: 'string', required: true },
@@ -114,32 +126,11 @@ export const Projects = defineDocumentType(() => ({
     twitter: { type: 'string' },
     personalTwitter: { type: 'string' },
     nostr: { type: 'string' },
-    tags: { type: 'list', of: { type: 'string' } },
-    bonusUSD: { type: 'number', default: 0 },
-    hidden: { type: 'boolean' },
-    showcase: { type: 'boolean' },
-  },
-  computedFields,
-}))
-
-export const Funds = defineDocumentType(() => ({
-  name: 'Fund',
-  filePathPattern: 'funds/**/*.mdx',
-  contentType: 'mdx',
-  fields: {
-    title: { type: 'string', required: true },
-    dateAdded: { type: 'date', required: true },
-    summary: { type: 'string', required: true },
-    nym: { type: 'string', required: true },
-    website: { type: 'string' },
-    coverImage: { type: 'string', required: true },
-    git: { type: 'string' },
-    twitter: { type: 'string' },
-    nostr: { type: 'string' },
-    personalTwitter: { type: 'string' },
-    zaprite: { type: 'string', required: true },
-    btcpay: { type: 'string', required: true },
-    tags: { type: 'list', of: { type: 'string' } },
+    tags: {
+      type: 'list',
+      of: { type: 'string' },
+      resolve: (tags) => (typeof tags === 'string' ? [tags] : tags),
+    },
     bonusUSD: { type: 'number', default: 0 },
     hidden: { type: 'boolean' },
     showcase: { type: 'boolean' },
@@ -149,7 +140,7 @@ export const Funds = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: 'data',
-  documentTypes: [Blog, Authors, Pages, Projects, Funds],
+  documentTypes: [Blog, Authors, Pages, Projects],
   mdx: {
     cwd: process.cwd(),
     remarkPlugins: [

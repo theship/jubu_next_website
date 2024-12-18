@@ -76,38 +76,8 @@ module.exports = () => {
     async redirects() {
       return [
         {
-          source: '/projects/nostr',
-          destination: '/funds/nostr',
-          permanent: true,
-        },
-        {
-          source: '/projects/general_fund',
-          destination: '/funds/general_fund',
-          permanent: true,
-        },
-        {
-          source: '/projects/opensats_operations_budget',
-          destination: '/funds/opensats_operations_budget',
-          permanent: true,
-        },
-        {
-          source: '/funds/general_fund',
-          destination: '/funds/general',
-          permanent: true,
-        },
-        {
-          source: '/funds/opensats_operations_budget',
-          destination: '/funds/ops',
-          permanent: true,
-        },
-        {
-          source: '/projects',
-          destination: '/funds',
-          permanent: true,
-        },
-        {
           source: '/projects/all',
-          destination: '/projects/showcase',
+          destination: '/projects/project1',
           permanent: true,
         },
         {

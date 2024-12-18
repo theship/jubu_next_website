@@ -1,3 +1,4 @@
+// import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { InferGetStaticPropsType } from 'next'
 import { allPages } from 'contentlayer/generated'
 import { MDXLayoutRenderer } from 'pliny/mdx-components'
@@ -6,11 +7,11 @@ import { MDXComponents } from '@/components/MDXComponents'
 const DEFAULT_LAYOUT = 'PageLayout'
 
 export const getStaticProps = async () => {
-  const page = allPages.find((p) => p.slug === 'thankyou')
+  const page = allPages.find((p) => p.slug === 'portfolio')
   return { props: { page: page } }
 }
 
-export default function ThankYou({
+export default function Portfolio({
   page,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (

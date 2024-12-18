@@ -1,0 +1,404 @@
+.
+├── LICENSE
+├── README.md
+├── components
+│   ├── BackToProjects.tsx
+│   ├── BigDumbMarkdown.tsx
+│   ├── Card.tsx
+│   ├── ClosedNotice.tsx
+│   ├── CreditItem.tsx
+│   ├── DesignTeam.tsx
+│   ├── Footer.tsx
+│   ├── FormButton.tsx
+│   ├── Header.tsx
+│   ├── Image.tsx
+│   ├── LayoutWrapper.tsx
+│   ├── Link.tsx
+│   ├── MDXComponents.tsx
+│   ├── Members.tsx
+│   ├── MobileNav.tsx
+│   ├── OLD_DonationForm.tsx
+│   ├── PageHeading.tsx
+│   ├── PageSection.tsx
+│   ├── PageTitle.tsx
+│   ├── ProjectCard.tsx
+│   ├── ProjectList.tsx
+│   ├── SEO.tsx
+│   ├── ScrollTopAndComment.tsx
+│   ├── SectionContainer.tsx
+│   ├── ShareButtons.tsx
+│   ├── Spinner.tsx
+│   ├── Supporters.tsx
+│   ├── Tag.tsx
+│   ├── ThemeSwitch.tsx
+│   ├── Typing.tsx
+│   ├── VideoPlayer.tsx
+│   ├── YouTubeEmbed.tsx
+│   └── social-icons
+│       ├── facebook.svg
+│       ├── github.svg
+│       ├── globe-solid.svg
+│       ├── index.tsx
+│       ├── linkedin.svg
+│       ├── mail.svg
+│       ├── nostr.svg
+│       ├── twitter.svg
+│       └── youtube.svg
+├── config
+│   └── index.ts
+├── contentlayer.config.ts
+├── css
+│   ├── docsearch.css
+│   ├── prism.css
+│   └── tailwind.css
+├── data
+│   ├── authors
+│   │   ├── default.mdx
+│   │   └── julee.mdx
+│   ├── blog
+│   │   ├── 20241016-.mdx
+│   │   ├── 20241216-a-new-site.mdx
+│   │   ├── bitcoin-grants-feb-2024.mdx
+│   │   ├── donation-commitment-from-build-asset-management.mdx
+│   │   └── doubling-down-on-nostr.mdx
+│   ├── headerNavLinks.ts
+│   ├── logo.svg
+│   ├── pages
+│   │   ├── contact.mdx
+│   │   ├── faq.mdx
+│   │   ├── mission.mdx
+│   │   ├── portfolio.mdx
+│   │   ├── resume.mdx
+│   │   ├── terms.mdx
+│   │   └── transparency.mdx
+│   ├── projects
+│   │   ├── project1.mdx
+│   │   ├── project2.mdx
+│   │   └── project3.mdx
+│   ├── references-data.bib
+│   └── siteMetadata.js
+├── docs
+│   └── grant-selection.md
+├── filestructure.txt
+├── jsconfig.json
+├── layouts
+│   ├── AuthorLayout.tsx
+│   ├── ListLayout.tsx
+│   ├── PageLayout.tsx
+│   ├── PostLayout.tsx
+│   ├── PostSimple.tsx
+│   └── ProjectLayout.tsx
+├── next-env.d.ts
+├── next.config.js
+├── package-lock.json
+├── package.json
+├── pages
+│   ├── 404.tsx
+│   ├── _app.tsx
+│   ├── _document.tsx
+│   ├── about
+│   │   ├── [...slug].tsx
+│   │   └── index.tsx
+│   ├── api
+│   │   ├── github.ts
+│   │   ├── info.ts
+│   │   ├── newsletter.ts
+│   │   ├── sendgrid.ts
+│   │   └── stripe_checkout.ts
+│   ├── blog
+│   │   ├── [...slug].tsx
+│   │   ├── index.tsx
+│   │   └── page
+│   │       └── [page].tsx
+│   ├── canary.tsx
+│   ├── checkout.tsx
+│   ├── contact.tsx
+│   ├── faq
+│   │   ├── grantee.tsx
+│   │   └── index.tsx
+│   ├── index.tsx
+│   ├── labs
+│   │   ├── [...slug].tsx
+│   │   ├── index.tsx
+│   │   └── showcase.tsx
+│   ├── mission.tsx
+│   ├── nostr.tsx
+│   ├── pgp.tsx
+│   ├── portfolio.tsx
+│   ├── privacy.tsx
+│   ├── resume.tsx
+│   ├── selection.tsx
+│   ├── submitted.tsx
+│   ├── support.tsx
+│   ├── tags
+│   │   └── [tag].tsx
+│   ├── tags.tsx
+│   ├── terms.tsx
+│   └── transparency.tsx
+├── postcss.config.js
+├── prettier.config.js
+├── public
+│   ├── BDG1.png
+│   ├── docs
+│   │   ├── agreement.pdf
+│   │   ├── bylaws.pdf
+│   │   ├── canary.txt
+│   │   ├── canary.txt.asc
+│   │   ├── conflict.pdf
+│   │   ├── dergigi.pub.asc
+│   │   ├── eeo.pdf
+│   │   ├── listing-terms.pdf
+│   │   ├── minutes
+│   │   │   ├── 2023-Q2.pdf
+│   │   │   ├── 2023-Q3.pdf
+│   │   │   ├── 2023-Q4.pdf
+│   │   │   ├── 2024-Q1.pdf
+│   │   │   ├── 2024-Q2.pdf
+│   │   │   └── 2024-Q3.pdf
+│   │   ├── rrp.pdf
+│   │   ├── tax.pdf
+│   │   └── whistle.pdf
+│   ├── favicon.ico
+│   ├── favicon.png
+│   ├── heroes
+│   │   ├── gold.png
+│   │   ├── phoenix.png
+│   │   ├── stars.png
+│   │   ├── treasure.png
+│   │   └── unicorn.png
+│   ├── img
+│   │   ├── placeholder.jpg
+│   │   ├── project
+│   │   │   ├── RGB_Logo.png
+│   │   │   ├── bdk.jpeg
+│   │   │   ├── bitcoin_core.png
+│   │   │   ├── bitcoindesign.jpg
+│   │   │   ├── bitcoiner_guide.png
+│   │   │   ├── bpi.png
+│   │   │   ├── btcpayserver.png
+│   │   │   ├── cashu.jpeg
+│   │   │   ├── graphene.png
+│   │   │   ├── nostr.png
+│   │   │   ├── opensats_legal.jpeg
+│   │   │   ├── opensats_logo.png
+│   │   │   ├── opensats_operations.png
+│   │   │   ├── rgb.png
+│   │   │   ├── ronin_dojo.png
+│   │   │   ├── sapio.jpg
+│   │   │   ├── scriptwizard.jpg
+│   │   │   ├── seedsigner.jpeg
+│   │   │   ├── sparrow.png
+│   │   │   ├── specter.png
+│   │   │   ├── splicing.jpg
+│   │   │   ├── stratumv2.jpg
+│   │   │   ├── summerofbitcoin.jpeg
+│   │   │   ├── thunderhub.png
+│   │   │   ├── tor.svg
+│   │   │   └── zeus.png
+│   │   └── supporters
+│   │       ├── andrew-w-blair.jpg
+│   │       ├── bottlepay.png
+│   │       ├── btc-pay-server.png
+│   │       ├── castlenine-dux-reserve.jpg
+│   │       ├── coinkite.png
+│   │       ├── greg-foss.jpg
+│   │       ├── jeremy-rubin.gif
+│   │       ├── john-pfeffer.jpg
+│   │       ├── ledger.jpg
+│   │       ├── liana.png
+│   │       ├── nodl.jpg
+│   │       ├── scarce-city.png
+│   │       ├── silvergate-bank.png
+│   │       ├── swan.png
+│   │       ├── tbc.png
+│   │       ├── ten31.jpg
+│   │       ├── unchained.png
+│   │       ├── voltage.png
+│   │       ├── waffledog.jpg
+│   │       └── zaprite.png
+│   ├── logo.svg
+│   └── static
+│       ├── favicons
+│       │   ├── android-chrome-192x192.png
+│       │   ├── android-chrome-512x512.png
+│       │   ├── apple-touch-icon.png
+│       │   ├── favicon-16x16.png
+│       │   ├── favicon-32x32.png
+│       │   ├── favicon.ico
+│       │   └── site.webmanifest
+│       ├── images
+│       │   ├── avatar.png
+│       │   ├── blog
+│       │   │   ├── 02-lts.jpg
+│       │   │   ├── 03-nostr.jpg
+│       │   │   ├── 04-bitcoin.jpg
+│       │   │   ├── 05-josi.jpg
+│       │   │   ├── 06-august.jpg
+│       │   │   ├── 07-sjors.jpg
+│       │   │   ├── 08-nostr-design.jpg
+│       │   │   ├── 09-nifty-infra.jpg
+│       │   │   ├── 10-vasil.jpg
+│       │   │   ├── 11-nostr-oct.jpg
+│       │   │   ├── 12-gleb.jpg
+│       │   │   ├── 13-nostr-design.jpg
+│       │   │   ├── 14-matt-morehouse.jpg
+│       │   │   ├── 15-furszy.jpg
+│       │   │   ├── 16-will-clark.jpg
+│       │   │   ├── 17-bitcoin-dec.jpg
+│       │   │   ├── 18-nostr-dec.jpg
+│       │   │   ├── 19-tobin.jpg
+│       │   │   ├── 20-eoy.jpg
+│       │   │   ├── 2023-eoy
+│       │   │   │   ├── allocation.png
+│       │   │   │   ├── donations.png
+│       │   │   │   ├── grantees.png
+│       │   │   │   ├── lts-grantees.png
+│       │   │   │   └── nostr-distribution.png
+│       │   │   ├── 21-bitb.jpg
+│       │   │   ├── 22-rene.jpg
+│       │   │   ├── 23-0xB10C.jpg
+│       │   │   ├── 24-bitcoin-feb.jpg
+│       │   │   ├── 25-nostr-lts.jpg
+│       │   │   ├── 26-bruno-lts.jpg
+│       │   │   ├── 27-pablo-lts.jpg
+│       │   │   ├── 28-stuart-lts.jpg
+│       │   │   ├── 29-hzrd149-lts.jpg
+│       │   │   ├── 30-reynolds.jpg
+│       │   │   ├── 31-shashwat-lts.jpg
+│       │   │   ├── 32-startsmall.jpg
+│       │   │   ├── 33-design-update.jpg
+│       │   │   ├── 34-calle.jpg
+│       │   │   ├── 35-jb55.jpg
+│       │   │   ├── 36-bitcoin-jul.jpg
+│       │   │   ├── 37-yuki.jpg
+│       │   │   ├── 38-education.jpg
+│       │   │   ├── 39-nostr-jul.jpg
+│       │   │   ├── 40-hodlbod.jpg
+│       │   │   ├── 41-bitcoin-6th-wave.jpg
+│       │   │   ├── 42-fiatjaf.jpg
+│       │   │   ├── 43-kieran.jpg
+│       │   │   ├── 44-build-asset-management.jpg
+│       │   │   ├── 45-nostr-grants-august-2024.jpg
+│       │   │   ├── 46-jason-donenfeld.jpg
+│       │   │   ├── 47-vitor-pamplona.jpg
+│       │   │   ├── 48-caring-for-bitcoin-core.jpg
+│       │   │   ├── 49-daniele-lts.jpg
+│       │   │   ├── 50-support-for-tor.jpg
+│       │   │   ├── 51-alex-gleason-receives-lts-grant.jpg
+│       │   │   ├── 52-mike-dilger-lts.jpg
+│       │   │   ├── 53-jon-atack-lts.jpg
+│       │   │   ├── 54-nostr-7th-wave.jpg
+│       │   │   ├── 55-seventh-wave-bitcoin-grants.jpg
+│       │   │   ├── 56-second-wave-of-education-grants.jpg
+│       │   │   ├── 57-dusty-daemon-lts-grant.jpg
+│       │   │   ├── 58-greenart7c3-lts.jpg
+│       │   │   ├── 59-bitcoin-8th-wave.jpg
+│       │   │   ├── 60-eighth-wave-nostr-grants.jpg
+│       │   │   ├── 61-third-wave-education-grants.jpg
+│       │   │   ├── 62-m1sterc001guy-lts.jpg
+│       │   │   ├── 63-doubling-down-on-nostr.jpg
+│       │   │   ├── 64-renewing-our-commitment-to-bitcoin.jpg
+│       │   │   ├── 65-ninth-wave-of-nostr-grants.jpg
+│       │   │   ├── coracle-New.png
+│       │   │   ├── coracle-WoT.png
+│       │   │   ├── highlighter.png
+│       │   │   ├── mostr.png
+│       │   │   ├── mutiny.png
+│       │   │   ├── nests.png
+│       │   │   ├── njump-update.png
+│       │   │   ├── old-nostr-screenshot.png
+│       │   │   ├── satcom.png
+│       │   │   ├── topzaps.png
+│       │   │   ├── zapcooking.png
+│       │   │   └── zapstream.png
+│       │   ├── board
+│       │   │   ├── abitcoinperson.jpg
+│       │   │   ├── dergigi.jpg
+│       │   │   ├── dread.jpg
+│       │   │   ├── eiaine.jpg
+│       │   │   ├── j9.jpg
+│       │   │   ├── jamesob.jpg
+│       │   │   ├── niftynei.jpg
+│       │   │   ├── nvk.jpg
+│       │   │   └── odell.jpg
+│       │   ├── design
+│       │   │   ├── dtonon.jpg
+│       │   │   ├── karnage.jpg
+│       │   │   └── niel.jpg
+│       │   ├── julee.jpg
+│       │   ├── ops
+│       │   │   └── rob.jpg
+│       │   ├── phoenix.png
+│       │   ├── projects
+│       │   │   ├── RGB_Logo.png
+│       │   │   ├── amethyst.png
+│       │   │   ├── bdk.jpeg
+│       │   │   ├── bitcoin-core.png
+│       │   │   ├── bitcoin_core.png
+│       │   │   ├── bitcoindesign.jpg
+│       │   │   ├── bitcoiner_guide.png
+│       │   │   ├── bpi.png
+│       │   │   ├── btcpayserver.png
+│       │   │   ├── cashu.jpeg
+│       │   │   ├── damus.png
+│       │   │   ├── dusty.jpg
+│       │   │   ├── graphene.png
+│       │   │   ├── jon_atack.png
+│       │   │   ├── michael_ford.png
+│       │   │   ├── nostr.png
+│       │   │   ├── opensats_legal.jpeg
+│       │   │   ├── opensats_logo.png
+│       │   │   ├── opensats_operations.png
+│       │   │   ├── rgb.png
+│       │   │   ├── ronin_dojo.png
+│       │   │   ├── sapio.jpg
+│       │   │   ├── scriptwizard.jpg
+│       │   │   ├── seedsigner.jpeg
+│       │   │   ├── sparrow.png
+│       │   │   ├── specter.png
+│       │   │   ├── splicing.jpg
+│       │   │   ├── stratumv2.jpg
+│       │   │   ├── summerofbitcoin.jpeg
+│       │   │   ├── thunderhub.png
+│       │   │   ├── tor.svg
+│       │   │   └── zeus.png
+│       │   ├── team
+│       │   │   └── arvin.jpg
+│       │   ├── transparency
+│       │   │   ├── applications-grants-reports.jpg
+│       │   │   ├── funding-decisions.jpg
+│       │   │   ├── funding-decisions.png
+│       │   │   ├── rejection-approval.jpg
+│       │   │   └── reports-flow.jpg
+│       │   ├── twitter.png
+│       │   └── volunteers
+│       │       ├── ace.jpg
+│       │       ├── arvin.jpg
+│       │       ├── bayer.jpg
+│       │       ├── btcschellingpt.jpg
+│       │       ├── cfunk.jpg
+│       │       ├── constant.jpg
+│       │       ├── ecurrencyhodler.jpg
+│       │       ├── jason.jpg
+│       │       ├── julian.jpg
+│       │       ├── lorenzo.jpg
+│       │       └── lucas.jpg
+│       └── videos
+│           └── not-leaving.mov
+├── scripts
+│   ├── postbuild.mjs
+│   ├── rss.mjs
+│   ├── search.mjs
+│   └── sitemap.mjs
+├── styles
+│   └── globals.css
+├── tailwind.config.js
+├── tsconfig.json
+├── tsconfig.recipe.json
+└── utils
+    ├── api-helpers.ts
+    ├── markdownToHtml.ts
+    ├── stripe-helpers.ts
+    └── types.ts
+
+43 directories, 359 files

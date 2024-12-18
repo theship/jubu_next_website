@@ -8,11 +8,9 @@ import { formatDate } from 'pliny/utils/formatDate'
 import { sortedBlogPost, allCoreContent } from 'pliny/utils/contentlayer'
 import { InferGetStaticPropsType } from 'next'
 import { NewsletterForm } from 'pliny/ui/NewsletterForm'
-import { allBlogs, allProjects, allFunds } from 'contentlayer/generated'
-import type { Blog, Fund } from 'contentlayer/generated'
+import { allBlogs, allProjects } from 'contentlayer/generated'
+import type { Blog } from 'contentlayer/generated'
 import { useRouter } from 'next/router'
-import PaymentModal from '../components/PaymentModal'
-import { isShowcaseProject } from './funds'
 import Typing from '@/components/Typing'
 import CustomLink from '@/components/Link'
 
@@ -22,51 +20,32 @@ export const getStaticProps = async () => {
   const sortedPosts = sortedBlogPost(allBlogs) as Blog[]
   const posts = allCoreContent(sortedPosts)
 
-  const projects = allProjects
+  const isShowcaseProject = (project) => project.showcase === true
+
+  const projects = (allProjects || [])
     .filter(isShowcaseProject)
     .sort(() => 0.5 - Math.random())
 
-  const generalFund = allFunds.find((f) => f.slug === 'general')
-  const opsFund = allFunds.find((f) => f.slug === 'ops')
+  console.log('projects', projects)
 
-  return { props: { posts, projects, generalFund, opsFund } }
+  return { props: { posts, projects } }
 }
 
 export default function Home({
   posts,
   projects,
-  generalFund,
-  opsFund,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const [modalOpen, setModalOpen] = useState(false)
 
   const router = useRouter()
 
-  const [selectedFund, setSelectedFund] = useState<Fund>()
-
   function closeModal() {
     setModalOpen(false)
-  }
-
-  function openPaymentModal(fund: Fund) {
-    setSelectedFund(fund)
-    setModalOpen(true)
-  }
-
-  function openGeneralFundModal() {
-    openPaymentModal(generalFund)
-  }
-
-  function openopsFundModal() {
-    openPaymentModal(opsFund)
   }
 
   useEffect(() => {
     if (router.isReady) {
       console.log(router.query)
-      if (router.query.donate === 'ops') {
-        openPaymentModal(opsFund)
-      }
     }
   }, [router.isReady])
   return (
@@ -91,24 +70,26 @@ export default function Home({
           </p>
           <div className="flex flex-wrap py-4">
             <div className="w-full md:w-1/2">
-              <button
-                onClick={openGeneralFundModal}
-                className="mb-2 mr-2 w-full rounded bg-indigo-900 px-4 text-xl font-semibold text-white hover:border-transparent hover:bg-indigo-900 hover:text-black dark:text-black dark:hover:text-white md:max-w-[98%]"
-              >
-                Donate to General Fund
-              </button>
+              <a href="/resume">
+                <button
+                  className="mb-2 mr-2 w-full rounded bg-indigo-900 px-4 text-xl font-semibold text-white hover:border-transparent hover:bg-indigo-900 hover:text-black dark:text-black dark:hover:text-white md:max-w-[98%]"
+                >
+                  My Résumé
+                </button>
+              </a>
             </div>
             <div className="hidden w-full md:block md:w-1/2">
-              <button
-                onClick={openopsFundModal}
-                className="block w-full rounded border border-indigo-900 bg-transparent px-4 text-xl font-semibold text-indigo-900 hover:border-transparent hover:bg-indigo-900 hover:text-black dark:hover:text-white"
-              >
-                Donate to Operations Budget
-              </button>
+              <a href="/portfolio">
+                <button
+                  className="mb-2 mr-2 w-full rounded bg-indigo-900 px-4 text-xl font-semibold text-white hover:border-transparent hover:bg-indigo-900 hover:text-black dark:text-black dark:hover:text-white md:max-w-[98%]"
+                >
+                  My Portfolio
+                </button>
+              </a>
             </div>
           </div>
           <p className="text-md leading-7 text-gray-500 dark:text-gray-400">
-            <em>All content on this site crafted with love—AND AI—by <CustomLink href="/about">me</CustomLink>.</em>
+            <em>All content on this site crafted with love—and HITL AI processes—by <CustomLink href="/about">me</CustomLink>.</em>
           </p>
           <div className="flex justify-end text-base font-medium leading-6">
             <Link
@@ -146,7 +127,7 @@ export default function Home({
             separately. If you like what we are doing please consider donating
             to our{' '}
             <CustomLink
-              href="/projects/opensats_operations_budget"
+              href="/projects/project1"
               className="underline"
             >
               Operations Budget
@@ -258,10 +239,6 @@ export default function Home({
             <CustomLink href="/mission" className="underline">
               our mission
             </CustomLink>
-            ? Are you working on Bitcoin, nostr, or freedom tech in general?{' '}
-            <CustomLink href="/apply" className="underline">
-              Apply for funding!
-            </CustomLink>
           </p>
           <div className="flex justify-end text-base font-medium leading-6">
             <Link
@@ -299,11 +276,6 @@ export default function Home({
           <NewsletterForm />
         </div>
       )}
-      <PaymentModal
-        isOpen={modalOpen}
-        onRequestClose={closeModal}
-        fund={selectedFund}
-      />
     </>
   )
 }

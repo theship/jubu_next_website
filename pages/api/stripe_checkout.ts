@@ -50,7 +50,7 @@ export default async function handler(
           recipient_campaign: zaprite,
           recipient_uuid: ZAPRITE_USER_UUID,
         },
-        success_url: `${req.headers.origin}/thankyou`,
+        success_url: `${req.headers.origin}/`,
         cancel_url: `${req.headers.origin}/`,
         // We need metadata in here for some reason
         payment_intent_data: {
